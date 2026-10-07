@@ -4,7 +4,7 @@ An analysis of 20,000 loan applications to find out which applicant details are 
 
 ## Dataset
 
-The data comes from the Financial Risk for Loan Approval dataset. `Loan.csv` has 20,000 applications and 36 columns, with no missing values and no duplicate rows.
+The data comes from the [Financial Risk for Loan Approval](https://www.kaggle.com/datasets/lorenzozoppelletto/financial-risk-for-loan-approval) dataset on Kaggle. `Loan.csv` has 20,000 applications and 36 columns, with no missing values and no duplicate rows.
 
 I used these columns: `ApplicationDate`, `AnnualIncome`, `CreditScore`, `EmploymentStatus`, `LoanAmount`, `SavingsAccountBalance`, `TotalAssets`, `TotalLiabilities`, `JobTenure`, `HomeOwnershipStatus` and `LoanApproved`.
 
@@ -57,7 +57,7 @@ Install the libraries:
 pip install numpy pandas seaborn matplotlib jupyter
 ```
 
-Place `Loan.csv` in the same folder as the notebook, then run:
+`Loan.csv` is included in this repo. Open the notebook with:
 
 ```bash
 jupyter notebook Loan_Approval_Financial_Risk_Analysis.ipynb
