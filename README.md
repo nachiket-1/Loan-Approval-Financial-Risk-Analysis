@@ -51,6 +51,13 @@ The highest income quarter accounts for 67% of all approved loans (3,223 of 4,78
 
 ## How to Run
 
+Clone the repo and move into the folder:
+
+```bash
+git clone https://github.com/nachiket-1/Loan-Approval-Financial-Risk-Analysis.git
+cd Loan-Approval-Financial-Risk-Analysis
+```
+
 Install the libraries:
 
 ```bash
@@ -62,6 +69,8 @@ pip install numpy pandas seaborn matplotlib jupyter
 ```bash
 jupyter notebook Loan_Approval_Financial_Risk_Analysis.ipynb
 ```
+
+Run the cells from top to bottom. The helper functions cell has to be run once before the charts.
 
 Run the cells from top to bottom. The helper functions cell has to be run once before the charts.
 
