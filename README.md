@@ -30,17 +30,17 @@ The dataset is synthetic. The application dates run one per day from January 201
 
 ### Income matters most
 
-![Approval rate by annual income](income_approval.png)
+![Approval rate by annual income](images/income_approval.png)
 
 The four income groups each hold 5,000 applicants, so the right hand chart is a fair comparison. The red dashed line marks the overall approval rate of 23.9%. Only the highest earning quarter is far above it. That group also makes up 67% of all approved loans (3,223 of 4,780).
 
 ### Loan size has to be read next to income
 
-![Approval rate by loan to income ratio](loan_to_income.png)
+![Approval rate by loan to income ratio](images/loan_to_income.png)
 
 A loan of 30,000 is easy for a high earner and hard for a low earner. When the loan is up to about a quarter of yearly income, around 69% of applications are approved. When the loan is above about three quarters of yearly income, only 0.3% are.
 
-![Approval rate by income group and loan size](income_loan_heatmap.png)
+![Approval rate by income group and loan size](images/income_loan_heatmap.png)
 
 The heatmap shows the same thing from the other side. Low earners are almost never approved, even for the smallest loans. High earners are approved 86% of the time for small loans but only 34% of the time for the largest ones.
 
@@ -60,25 +60,25 @@ The heatmap shows the same thing from the other side. Low earners are almost nev
 | Job Tenure (years) | 0 to 1 yrs (22.4%) | 10+ yrs (25.1%) | None |
 | Savings Account Balance (USD) | Lowest 25% (22.8%) | Lower middle (24.3%) | None |
 
-![Correlation of each variable with loan approval](correlation.png)
+![Correlation of each variable with loan approval](images/correlation.png)
 
 Credit score helps steadily: scores below 450 are approved about 14% of the time and scores of 650 and above about 45% of the time. Most applicants sit in the middle, so those two groups are small.
 
-![Approval rate by credit score band](credit_score.png)
+![Approval rate by credit score band](images/credit_score.png)
 
 Bigger loans are approved less often, from 39% for the smallest quarter to 9% for the largest quarter.
 
-![Approval rate by loan size](loan_amount.png)
+![Approval rate by loan size](images/loan_amount.png)
 
 Debt to income ratio shows the strongest pattern after income. Applicants with a ratio up to about 0.18 are approved 67.5% of the time and those above about 0.51 only 0.5% of the time.
 
-![Approval rate by debt to income ratio](debt_to_income.png)
+![Approval rate by debt to income ratio](images/debt_to_income.png)
 
 ### RiskScore and InterestRate are set by the lender
 
 RiskScore has the strongest link to approval of any column (correlation about negative 0.77), and approved applicants have a clearly lower score than rejected ones. But the lender most likely calculates it from the same information used to make the decision, so using it to explain approval would be circular. Interest rate has a similar problem, because riskier applicants are offered higher rates. I studied both and kept both out of the model.
 
-![Risk score by loan decision](riskscore_boxplot.png)
+![Risk score by loan decision](images/riskscore_boxplot.png)
 
 ### Predicting approval
 
@@ -94,11 +94,11 @@ A logistic regression using applicant information only (income, credit score, lo
 
 The model is right 88.3% of the time. A model that rejects every application would be right 76.1% of the time, so it adds real value. Accuracy on the training data was 88.0%, almost the same, so the model is not overfitting. Adding RiskScore pushes accuracy to 98.3%, but that is the circular effect described above, so I kept it out of the real model.
 
-![Confusion matrix](confusion_matrix.png)
+![Confusion matrix](images/confusion_matrix.png)
 
 The loan to income ratio is the strongest push towards rejection, followed by debt to income ratio and loan amount. Annual income, the assets to liabilities ratio and credit score push towards approval. Savings and job tenure are close to zero.
 
-![Model coefficients](coefficients.png)
+![Model coefficients](images/coefficients.png)
 
 At the default cutoff of 0.5 the model is the most precise but misses about three in ten approved loans. Lowering the cutoff finds more of them at the cost of precision.
 
