@@ -356,9 +356,4 @@ To run it on your own computer:
 | `images/` | The charts used in this README |
 | `README.md` | This file |
 
-## What I would do next
 
-1. Pick the cutoff from the real cost of a bad loan against a lost customer instead of using 0.5, and send borderline cases for manual review
-2. Add the remaining credit columns (credit card utilization, bankruptcy history, previous defaults) and see whether the model improves
-3. Repeat the fairness checks for age, marital status and education on every new version of the model
-4. Test the approach on real application data
